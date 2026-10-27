@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const assets = new Map();
-const types = { '.jpg': 'image/jpeg', '.png': 'image/png', '.ttf': 'font/ttf', '.svg': 'image/svg+xml' };
+const types = { '.jpg': 'image/jpeg', '.png': 'image/png', '.gif': 'image/gif', '.ttf': 'font/ttf', '.woff2': 'font/woff2', '.svg': 'image/svg+xml', '.mp4': 'video/mp4' };
 function collect(directory, prefix = '') {
   for (const file of readdirSync(directory, { withFileTypes: true })) {
     const path = resolve(directory, file.name);
@@ -31,8 +31,10 @@ const output = await build({
 let script = output.outputFiles[0].text;
 let css = [
   readFileSync(resolve(root, 'src/index.css'), 'utf8'),
-  readFileSync(resolve(root, 'node_modules/lenis/dist/lenis.css'), 'utf8'),
   readFileSync(resolve(root, 'src/motion.css'), 'utf8'),
+  readFileSync(resolve(root, 'src/hero.css'), 'utf8'),
+  readFileSync(resolve(root, 'src/pages.css'), 'utf8'),
+  readFileSync(resolve(root, 'src/storytelling.css'), 'utf8'),
 ].join('\n');
 for (const [path, data] of assets) {
   script = script.replaceAll(JSON.stringify(path), JSON.stringify(data));

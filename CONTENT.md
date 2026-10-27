@@ -12,9 +12,13 @@ Source: the local checkout at `../Aethersync`, whose Git origin is `https://gith
 | Seven delivery stages and deliverables | `src/components/ProcessTimeline.tsx` | `src/data/content.ts`, `/services#process` |
 | Technology stack | `src/components/TechStackGrid.tsx` | `src/data/content.ts`, home and about pages |
 | Six reasons to choose Aethersync | `src/components/WhyChooseUs.tsx` | `src/data/content.ts`, `/services` |
+| Aethersync IDE homepage feature and destination | User request and `https://ide.theaethersync.com/` | `src/components/IdeFeature.tsx` |
+| IDE introduction video | Live IDE site's `/shots/hero-video.mp4`, matching the tracked file in `../Aethersync/public/shots` | `public/media/ide-demo.mp4` and derived `ide-poster.jpg` |
 
 Purple AI, Fact Checking and Laundry Management retain their **In development** status. Open ERP, Corpflow, Finraze and FuturePath AI retain their published **Live** status and destination URLs. No client metrics, testimonials, offices or social accounts were added.
 
 The contact form prepares an email draft for `ceo@theaethersync.com`; the visitor sends it through their email application. There is no backend email service in the source repository.
 
 The custom pixel A is a code-native SVG. The second founder is represented by initials because the source contains no portrait for him.
+
+The IDE feature replaces the homepage FuturePath promotional section; FuturePath's catalogue entry and detail page remain. The “Pakistan’s first AI-powered IDE” headline is supplied by the user. The introduction video SHA-256 is `806bbc7f7a10d5c4dca536f64d6baa8c1061ed5a57ea973e0e7bc5edb841c36d`.

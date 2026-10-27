@@ -1,6 +1,12 @@
-import { ArrowUpRight, BrainCircuit, Database, Globe2 } from 'lucide-react';
-import { PixelA } from './Brand';
-
 export function HeroVisual() {
-  return <div className="hero-system" aria-label="Aethersync connects artificial intelligence, business systems and digital experiences"><div className="system-heading"><span className="mono">THE AETHERSYNC SYSTEM</span><span className="system-dot" /></div><div className="system-canvas"><div className="system-lines" aria-hidden="true" /><div className="system-core"><PixelA monochrome /><span className="mono">CONNECTED BY DESIGN</span></div><div className="system-node node-ai"><BrainCircuit size={20} /><span>Artificial<br />intelligence</span><ArrowUpRight size={13} /></div><div className="system-node node-business"><Database size={20} /><span>Business<br />systems</span><ArrowUpRight size={13} /></div><div className="system-node node-digital"><Globe2 size={20} /><span>Digital<br />experiences</span><ArrowUpRight size={13} /></div><span className="system-pixel pixel-one" aria-hidden="true" /><span className="system-pixel pixel-two" aria-hidden="true" /><span className="system-pixel pixel-three" aria-hidden="true" /></div><div className="system-bottom"><span className="mono">07 PLATFORMS / ONE ECOSYSTEM</span><span className="mono">EST. 2023</span></div></div>;
+  return <div className="hero-art" aria-hidden="true">
+    <img className="hero-claw" src="/hero/claw.svg" alt="" width="48" height="48" />
+    <div className="hero-rail hero-rail-left">
+      <i className="hero-orbit" /><i className="hero-point point-orbit" /><i className="hero-point point-left" />
+      <picture className="hero-cat hero-sprite"><source media="(prefers-reduced-motion: reduce)" srcSet="/hero/cat.png" /><img src="/hero/cat.gif" alt="" width="64" height="56" /></picture>
+      <div className="hero-square square-yellow" /><div className="hero-square square-orange" />
+    </div>
+    <div className="hero-floor"><div className="hero-floor-left"><div className="hero-square square-small square-yellow" /><div className="hero-square square-small square-red" /><img className="hero-factory hero-sprite" src="/hero/factory.svg" alt="" width="48" height="48" /></div><div className="hero-floor-right"><img className="hero-robot hero-sprite" src="/hero/robot.svg" alt="" width="48" height="48" /><div className="hero-square square-small square-yellow" /><div className="hero-square square-diamond square-orange" /></div></div>
+    <div className="hero-rail hero-rail-right"><i className="hero-point point-right" /><div className="hero-square square-diamond square-orange" /><div className="hero-square square-yellow" /><div className="hero-square square-amber" /></div>
+  </div>;
 }
