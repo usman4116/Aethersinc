@@ -1,0 +1,9 @@
+import { ArrowUpRight, Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { advantages, services } from '../data/content';
+import { ContactCta, Eyebrow, PageHero, Reveal } from '../components/UI';
+import { Process } from '../components/Process';
+
+export default function Services() {
+  return <><PageHero eyebrow="Our solutions" title={<>Your ambition.<br /><span className="text-orange">Our expertise.</span></>} description="Custom software, applied AI, connected enterprise systems. Six disciplines that turn your challenges into tools your team can actually use." /><section className="service-catalog"><div className="container">{services.map((service, index) => <article className="service-detail" id={service.slug} key={service.slug}><span className="service-detail-number mono">0{index + 1} / 06</span><Reveal className="service-detail-main"><service.icon size={36} strokeWidth={1.3} /><h2>{service.fullTitle}</h2><p>{service.description}</p><Link to={`/contact?interest=${encodeURIComponent(service.title)}`} className="text-link">Let’s build together<ArrowUpRight size={17} /></Link></Reveal><ul className="service-points">{service.points.map(point => <li key={point}><Check size={17} />{point}</li>)}</ul></article>)}</div></section><section className="section advantages-section"><div className="container"><div className="section-heading"><div><Eyebrow>Why Aethersync</Eyebrow><h2>Built around you.<br />Ready to grow.</h2></div><p>Our own platforms inform the work we do for you. We bring practical experience to every project.</p></div><div className="advantages-grid">{advantages.map(([title, copy], index) => <div key={title}><span className="mono">0{index + 1}</span><h3>{title}</h3><p>{copy}</p></div>)}</div></div></section><Process /><ContactCta /></>;
+}

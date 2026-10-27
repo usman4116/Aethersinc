@@ -1,0 +1,8 @@
+node_modules/
+dist/
+review/
+preview.html
+*.log
+.claude/
+.env*
+.DS_Store
