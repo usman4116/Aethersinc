@@ -6,7 +6,7 @@ export function HeroVisual() {
       <picture className="hero-cat hero-sprite"><source media="(prefers-reduced-motion: reduce)" srcSet="/hero/cat.png" /><img src="/hero/cat.gif" alt="" width="64" height="56" /></picture>
       <div className="hero-square square-yellow" /><div className="hero-square square-orange" />
     </div>
-    <div className="hero-floor"><div className="hero-floor-left"><div className="hero-square square-small square-yellow" /><div className="hero-square square-small square-red" /><img className="hero-factory hero-sprite" src="/hero/factory.svg" alt="" width="48" height="48" /></div><div className="hero-floor-right"><img className="hero-robot hero-sprite" src="/hero/robot.svg" alt="" width="48" height="48" /><div className="hero-square square-small square-yellow" /><div className="hero-square square-diamond square-orange" /></div></div>
+    <div className="hero-floor"><div className="hero-floor-left"><div className="hero-square square-small square-yellow" /><div className="hero-square square-small square-red" /><img className="hero-mosque hero-sprite" src="/hero/badshahi-mosque.svg" alt="" width="48" height="48" /></div><div className="hero-floor-right"><img className="hero-minar hero-sprite" src="/hero/minar-e-pakistan.svg" alt="" width="48" height="72" /><div className="hero-square square-small square-yellow" /><div className="hero-square square-diamond square-orange" /></div></div>
     <div className="hero-rail hero-rail-right"><i className="hero-point point-right" /><div className="hero-square square-diamond square-orange" /><div className="hero-square square-yellow" /><div className="hero-square square-amber" /></div>
   </div>;
 }

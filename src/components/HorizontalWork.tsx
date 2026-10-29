@@ -86,7 +86,7 @@ export function HorizontalWork() {
     });
   }, []);
 
-  return <section ref={ref} className="section work-section" id="selected-work" aria-labelledby="work-heading"><div className="container work-stage">
+  return <section ref={ref} className="section work-section work-liquid" id="selected-work" aria-labelledby="work-heading"><svg className="work-liquid-defs" width="0" height="0" aria-hidden="true"><defs><filter id="work-liquid-wave" x="-20%" y="-25%" width="140%" height="150%" colorInterpolationFilters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.002 0.004" numOctaves="1" seed="8" result="wave"/><feDisplacementMap in="SourceGraphic" in2="wave" scale="85" xChannelSelector="R" yChannelSelector="G"/></filter></defs></svg><div className="container work-stage">
     <div className="section-heading"><div><Eyebrow>Selected client work</Eyebrow><h2 id="work-heading">A world of<br /><em>different stories.</em></h2></div><div><p>Distinctive websites. Considered experiences.<br />A few things we’ve helped bring to life.</p><TextLink to="/projects">View all client work</TextLink></div></div>
     <div className="work-viewport">
       <div className="work-track" onFocusCapture={event => {

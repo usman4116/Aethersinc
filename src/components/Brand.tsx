@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const pixels = ['0011100', '0111110', '1100011', '1100011', '1111111', '1100011', '1100011'];
-const colors = ['#f4bf4b', '#f4a23b', '#fa8330', '#fb6b29', '#f65524', '#e54324', '#cd3223'];
+const colors = ['#ff925c', '#f78548', '#ef7943', '#e76831', '#ce5425', '#b64721', '#a63d1b'];
 
 export function PixelA({ className = '', monochrome = false }: { className?: string; monochrome?: boolean }) {
   return <svg className={`pixel-a ${className}`} viewBox="0 0 70 70" fill="currentColor" aria-hidden="true" shapeRendering="crispEdges">

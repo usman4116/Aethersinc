@@ -59,3 +59,11 @@ Start the app on port 5177, then run `npm run test:motion`. The browser check co
 Screenshots and the report are written to `review/motion`. Set `AETHERSYNC_BASE_URL` to check another running preview, or `AETHERSYNC_BROWSER` to select a Chrome/Chromium executable. Run `npm run build` for TypeScript and production bundling, and `npm run preview:offline` to refresh the self-contained preview.
 
 Run `npm run test:pages` to check product selection and filters, service section links and process tabs, scroll-driven project chapters and previews, founder content, all seven product detail routes, and reduced motion. It checks 320, 390, 768, 1024 and 1440px widths and writes screenshots and results to `review/pages`.
+
+## Editorial refinement
+
+The homepage uses three chapter dividers to connect possibilities, proof, and partnership. Product story artwork is now a labelled capability map using the actual platform feature list; it is not a screenshot or a live product simulation. Its rows enter progressively during the existing desktop chapter sequence. Product detail pages share these maps.
+
+The services accordion updates a three-stage workflow diagram, whose connecting line draws as it enters view. The process journey introduces four phases above seven selectable steps, each with three concrete deliverables. At desktop widths of at least 1100px and heights of at least 850px, the process panel pins for 1600px of native scroll and advances through the seven stages. Clicking or using arrow keys selects the matching scroll position. Smaller screens and reduced motion keep manual tabs without pinning.
+
+The Company hero now features the supplied founder portrait, with an additional origin/platforms/today timeline. Featured work presents existing project tags and deliverables without adding unverified commercial outcomes. Shared copper controls, quieter architectural framing, improved labels, contact framing, and footer spacing are in `src/refinement.css`.

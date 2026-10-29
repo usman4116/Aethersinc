@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://theaethersync.com/</loc></url>
-  <url><loc>https://theaethersync.com/products</loc></url>
-  <url><loc>https://theaethersync.com/products/purple-ai</loc></url>
-  <url><loc>https://theaethersync.com/products/open-erp</loc></url>
-  <url><loc>https://theaethersync.com/products/corpflow</loc></url>
-  <url><loc>https://theaethersync.com/products/finraze</loc></url>
-  <url><loc>https://theaethersync.com/products/fact-checking</loc></url>
-  <url><loc>https://theaethersync.com/products/laundry-management</loc></url>
-  <url><loc>https://theaethersync.com/products/futurepath-ai</loc></url>
-  <url><loc>https://theaethersync.com/services</loc></url>
-  <url><loc>https://theaethersync.com/projects</loc></url>
-  <url><loc>https://theaethersync.com/about</loc></url>
-  <url><loc>https://theaethersync.com/contact</loc></url>
+  <url><loc>https://aethersync.tech/</loc></url>
+  <url><loc>https://aethersync.tech/products</loc></url>
+  <url><loc>https://aethersync.tech/products/purple-ai</loc></url>
+  <url><loc>https://aethersync.tech/products/open-erp</loc></url>
+  <url><loc>https://aethersync.tech/products/corpflow</loc></url>
+  <url><loc>https://aethersync.tech/products/finraze</loc></url>
+  <url><loc>https://aethersync.tech/products/fact-checking</loc></url>
+  <url><loc>https://aethersync.tech/products/laundry-management</loc></url>
+  <url><loc>https://aethersync.tech/products/futurepath-ai</loc></url>
+  <url><loc>https://aethersync.tech/services</loc></url>
+  <url><loc>https://aethersync.tech/projects</loc></url>
+  <url><loc>https://aethersync.tech/about</loc></url>
+  <url><loc>https://aethersync.tech/contact</loc></url>
+  <url><loc>https://aethersync.tech/services/website-development</loc></url>
+  <url><loc>https://aethersync.tech/services/custom-software-development</loc></url>
+  <url><loc>https://aethersync.tech/services/erp-development</loc></url>
+  <url><loc>https://aethersync.tech/about/usman-farhan</loc></url>
 </urlset>

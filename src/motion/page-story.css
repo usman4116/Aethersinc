@@ -1,0 +1,21 @@
+.page-story-nav { --story-progress: 0; position: fixed; z-index: 35; right: 20px; bottom: 20px; max-width: calc(100vw - 40px); padding: 13px 17px 16px; background: #141518eb; border: 1px solid #e8a27630; border-radius: 9px; backdrop-filter: blur(16px); box-shadow: 0 10px 35px #0003; }
+.page-story-label { display: flex; justify-content: space-between; gap: 35px; font: 8px 'Azeret Mono',monospace; letter-spacing: .08em; color: #a9a29c; }
+.page-story-label b { font-weight: 400; color: #e8a276; }
+.page-story-nav > div { display: flex; gap: 9px; margin-top: 10px; }
+.page-story-nav button { position: relative; display: flex; align-items: center; gap: 7px; padding: 6px 2px; border: 0; background: none; color: #d8d1ca; cursor: pointer; }
+.page-story-nav button i { display: block; width: 18px; height: 3px; background: #ffffff25; border-radius: 3px; transition: background .3s,width .3s; }
+.page-story-nav button[aria-current=step] i { width: 30px; background: #e8a276; }
+.page-story-nav button span { position: absolute; right: 0; bottom: calc(100% + 9px); padding: 8px 10px; border: 1px solid #e8a27630; border-radius: 5px; background: #151619; font-size: 11px; white-space: nowrap; opacity: 0; visibility: hidden; transition: opacity .2s; }
+.page-story-nav button:is(:hover,:focus-visible) span { opacity: 1; visibility: visible; }
+.page-story-line { position: absolute; height: 2px; bottom: 0; left: 8px; right: 8px; transform: scaleX(var(--story-progress)); transform-origin: left; background: #e8a276; }
+.chapter-bridge { position: relative; }
+.chapter-bridge::after, .solution-chapter::after, .company-timeline article::after { content: ''; position: absolute; height: 1px; left: 0; right: 0; bottom: 0; background: #e8a276; transform: scaleX(var(--chapter-fill,1)); transform-origin: left; pointer-events: none; }
+.solution-chapter { position: relative; }
+.company-timeline article::after { bottom: auto; top: -1px; }
+.platform-tile-art { overflow: hidden; }
+.platform-tile-art::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg,#30251d,#161719); transform: translateY(calc(-100% + var(--card-reveal,0%))); pointer-events: none; }
+.design-end, .contact-cta { position: relative; isolation: isolate; }
+.design-end::before, .contact-cta::before { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none; opacity: var(--closing-light,1); background: radial-gradient(ellipse at 75% 100%,#e8a27620,transparent 65%); }
+body:has(.work-preview-overlay) .page-story-nav, body:has(.mobile-nav.is-open) .page-story-nav { visibility: hidden; }
+@media(max-width:999px) { .page-story-nav { display: none; } }
+@media(prefers-reduced-motion:reduce) { .page-story-line { display: none; } .page-story-nav * { transition: none !important; } .platform-tile-art::after { display: none; } }

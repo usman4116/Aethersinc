@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 72" fill="none" shape-rendering="crispEdges">
+  <title>Minar-e-Pakistan, Lahore</title>
+  <!-- Finial, stepped dome, and the observation balcony. -->
+  <path d="M23 0h2v6h-2zM21 6h6v2h-6zM19 8h10v2H19zM17 10h14v4H17z" fill="#ef7943"/>
+  <path d="M21 6h2v2h-2zM19 8h2v2h-2zM17 10h4v4h-4z" fill="#ff925c"/>
+  <path d="M27 8h2v2h-2zM27 10h4v4h-4z" fill="#a63d1b"/>
+  <path d="M15 14h18v2H15zM17 16h14v2H17z" fill="#ef7943"/>
+  <path d="M17 16h14v2H17z" fill="#a63d1b"/>
+  <!-- The tapering, vertically ribbed shaft. -->
+  <path d="M20 18h8v18h2v12h2v6h2v6H14v-6h2v-6h2V36h2z" fill="#ef7943"/>
+  <path d="M20 18h2v20h-2v12h-2v6h-2v4h-2v-6h2v-6h2V36h2z" fill="#ff925c"/>
+  <path d="M26 18h2v18h2v12h2v6h2v6h-4v-8h-2V40h-2z" fill="#a63d1b"/>
+  <path d="M23 20h2v34h-2zM19 42h2v14h-2zM27 44h2v12h-2z" fill="#71311c"/>
+  <path d="M18 46h12v2H18z" fill="#ce5425"/>
+  <!-- Splayed petals and the monument's stepped platform. -->
+  <path d="M8 54h4v4h4v4h4v4H8v-4H6v-4h2zM36 54h4v4h2v4h-2v4H28v-4h4v-4h4z" fill="#ce5425"/>
+  <path d="M8 54h2v6h4v4h6v2H8v-4H6v-4h2z" fill="#ff925c"/>
+  <path d="M38 54h2v4h2v4h-2v4H28v-2h8v-4h2z" fill="#a63d1b"/>
+  <path d="M18 58h12v8H18z" fill="#ef7943"/>
+  <path d="M22 58h4v2h2v6h-8v-6h2z" fill="#281b17"/>
+  <path d="M6 66h36v2H6zM3 68h42v2H3zM0 70h48v2H0z" fill="#a63d1b"/>
+  <path d="M6 66h32v2H6zM3 68h36v2H3zM0 70h42v2H0z" fill="#ef7943"/>
+  <path d="M6 66h12v2H6zM3 68h12v2H3zM0 70h12v2H0z" fill="#ff925c"/>
+</svg>

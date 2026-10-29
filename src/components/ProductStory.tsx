@@ -1,10 +1,11 @@
+import { ProductBlueprint } from './ProductBlueprint';
 import { useLayoutEffect, useRef, useState } from 'react';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { products } from '../data/content';
-import { ProductArt, Status } from './ProductCard';
+import { Status } from './ProductCard';
 import { Eyebrow, TextLink } from './UI';
 import { scrollToTarget } from '../motion/scroll';
 
@@ -49,7 +50,7 @@ export function ProductStory() {
       timeline.to({}, { duration: 0.65 });
       panels.forEach((panel, index) => {
         timeline.fromTo(panel.querySelector('.product-symbol'), { scale: 0.88 }, { scale: 1, duration: 0.65, ease: 'none' }, index + 0.05);
-        timeline.to(panel.querySelectorAll('.art-orbit'), { rotation: 62, duration: 0.65, ease: 'none' }, index + 0.05);
+        timeline.fromTo(panel.querySelectorAll('.blueprint-step'), { x: 18, opacity: .35 }, { x: 0, opacity: 1, stagger: .1, duration: .35 }, index + .05);
       });
       trigger.current = timeline.scrollTrigger!;
       return () => { trigger.current = null; setPinned(false); section.classList.remove('story-is-pinned'); };
@@ -87,7 +88,7 @@ export function ProductStory() {
               <Status status={chapter.product.status} />
               <Link to={'/products/' + chapter.product.slug} className="text-link">Explore {chapter.product.name}<ArrowUpRight size={16} /></Link>
             </div>
-            <div className="story-art"><ProductArt product={chapter.product} large /><span className="story-product-name">{chapter.product.name}</span></div>
+            <div className="story-art"><ProductBlueprint product={chapter.product} /><span className="story-product-name">{chapter.product.name}</span></div>
           </article>
         )}</div>
       </div>

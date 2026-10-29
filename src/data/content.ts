@@ -24,8 +24,7 @@ export const services = [
 ] as const;
 
 export const founders = [
-  { name: 'Muhammad Usman Farhan', role: 'CEO & Founder', initials: 'UF', image: '/founder.jpg', bio: 'Visionary engineer and entrepreneur driving the AetherSync mission to build scalable enterprise ERP systems, custom software architectures, and autonomous AI-driven business automation solutions for modern global enterprises.' },
-  { name: 'Muhammad Abdullah Bhatti', role: 'Co-Founder · Core Architecture', initials: 'AB', image: null, bio: 'Core architect and product strategist shaping the AetherSync ecosystem — specializing in enterprise ERP infrastructure, full-stack software engineering, and high-performance cloud automation platforms.' },
+  { name: 'Muhammad Usman Farhan', role: 'CEO & Founder', initials: 'UF', image: '/founder.jpg', bio: 'Muhammad Usman Farhan, also known as Usman Farhan, is the CEO and founder of Aethersync Technology Solutions. His work focuses on enterprise ERP systems, custom software architectures and AI-driven business automation.' },
 ] as const;
 
 export const process = [

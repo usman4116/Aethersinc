@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function RollingWord({ text }: { text: string }) {
   return <span className="hero-word">{[...text].map((letter, index) => {
-    const roll = index % 5 === 0 && !'ypq'.includes(letter);
+    const roll = false;
     return <span className="hero-letter-window" key={index}><span className={`hero-letter ${roll ? 'hero-letter-roll' : ''}`} data-letter-index={index}><span>{letter}</span>{roll && <span className="hero-letter-copy">{letter}</span>}</span></span>;
   })}</span>;
 }
@@ -33,12 +33,12 @@ export function MistralHero() {
           const floorLeft = gsap.utils.toArray<HTMLElement>('.hero-floor-left .hero-square', hero);
           const floorRight = gsap.utils.toArray<HTMLElement>('.hero-floor-right .hero-square', hero);
           const squares = [...left].reverse().concat(right, floorLeft, [...floorRight].reverse());
-          const idle = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 1, yoyo: true, defaults: { duration: .8, ease: 'power4.inOut' } });
+          const idle = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 5, yoyo: true, defaults: { duration: .8, ease: 'power4.inOut' } });
           const unit = () => left[0].offsetWidth;
           idle.to(floorLeft[0], { width: unit, height: unit, margin: 0, duration: .4 }, 2)
             .to(floorRight[0], { height: 0 })
             .to([left[1], floorLeft[0]], { x: () => -unit() }, '+=.5')
-            .to([floorLeft[1], '.hero-factory'], { x: () => -unit() }, '+=.1')
+            .to([floorLeft[1], '.hero-mosque'], { x: () => -unit() }, '+=.1')
             .to(floorRight[1], { width: unit, height: unit, rotation: 0, margin: 0 })
             .to(right, { y: unit }, '+=1')
             .to([floorRight[1], right[1]], { x: unit })
@@ -54,12 +54,12 @@ export function MistralHero() {
             .from('.hero-point', { opacity: 0, duration: .5, stagger: .1 }, 1)
             .from('.hero-announcement', { opacity: 0, y: 8, duration: .6, ease: 'power4.out' }, 1.2);
           lines.forEach((line, lineIndex) => {
-            intro.from(line, { height: 0, duration: 1.3, ease: 'power4.inOut', clearProps: 'height' }, lineIndex * .7);
+            intro.from(line, { height: 0, duration: 1.3, ease: 'power4.inOut', clearProps: 'height' }, lineIndex * .25);
             intro.fromTo(line.querySelectorAll<HTMLElement>('.hero-letter'), { yPercent: 100 }, {
               yPercent: (_, element: HTMLElement) => element.classList.contains('hero-letter-roll') ? -50 : 0,
               duration: 1, ease: 'power4.inOut',
               stagger: (_, element: HTMLElement) => Number(element.dataset.letterIndex) * (1 + Number(element.dataset.letterIndex) % 5) * .005,
-            }, lineIndex * .735);
+            }, lineIndex * .25);
           });
           intro.from('.hero-inline-flag', { yPercent: 100, duration: 1, ease: 'power4.inOut' }, .22);
           gsap.to('.hero-title-parallax', { yPercent: 50, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true } });

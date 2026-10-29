@@ -100,7 +100,7 @@ try {
   results.push('The project reel follows scrolling; chapter controls, focus isolation, archive filters and enlarged previews work.');
 
   await visit(page, 'about');
-  assert.equal(await page.locator('.company-founder').count(), 2);
+  assert.equal(await page.locator('.company-founder').count(), 1);
   await page.locator('.company-founder-portrait img').scrollIntoViewIfNeeded();
   await page.waitForFunction(() => document.querySelector('.company-founder-portrait img').naturalWidth > 0);
   assert.match(await page.locator('h1').evaluate(el => getComputedStyle(el).fontFamily), /Cabinet Grotesk/);

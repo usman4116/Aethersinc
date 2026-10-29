@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" shape-rendering="crispEdges">
+  <title>Badshahi Mosque</title>
+  <!-- Sandstone minarets and marble cupolas, drawn on a pixel grid. -->
+  <path d="M4 6h2v3H4zm38 0h2v3h-2z" fill="#E9AB46"/>
+  <path d="M3 9h4v2H3zm38 0h4v2h-4zM2 11h6v3H2zm38 0h6v3h-6z" fill="#FFF0CE"/>
+  <path d="M3 14h4v27H3zm38 0h4v27h-4z" fill="#C44E2D"/>
+  <path d="M3 14h2v27H3zm38 0h2v27h-2z" fill="#EF8445"/>
+  <path d="M2 19h6v2H2zm0 9h6v2H2zm38-9h6v2h-6zm0 9h6v2h-6z" fill="#FFD18B"/>
+  <path d="M10 18h2v16h-2zm26 0h2v16h-2z" fill="#B8462A"/>
+  <path d="M10 16h2v2h-2zm26 0h2v2h-2z" fill="#FFF0CE"/>
+  <!-- Three stepped marble domes. -->
+  <path d="M23 10h2v4h-2zm-10 8h2v3h-2zm20 0h2v3h-2z" fill="#E9AB46"/>
+  <path d="M22 14h4v2h-4zm-2 2h8v2h-8zm-2 2h12v6H18zm2 6h8v2h-8zM12 21h4v2h-4zm-2 2h8v4h-8zm2 4h4v2h-4zm20-6h4v2h-4zm-2 2h8v4h-8zm2 4h4v2h-4z" fill="#FFF0CE"/>
+  <path d="M26 18h2v6h-2zm-6 6h8v2h-8zm-4-1h2v4h-2zm20 0h2v4h-2z" fill="#D7B994"/>
+  <path d="M7 29h34v12H7z" fill="#D96236"/>
+  <path d="M18 26h12v15H18z" fill="#F08749"/>
+  <path d="M7 29h11v2H7zm23 0h11v2H30zm-12-3h12v2H18z" fill="#FFD18B"/>
+  <path d="M22 30h4v2h2v9h-8v-9h2z" fill="#FFE4B5"/>
+  <path d="M23 32h2v2h1v7h-4v-7h1zM10 34h2v2h1v5H9v-5h1zm5 0h1v2h1v5h-3v-5h1zm17 0h1v2h1v5h-3v-5h1zm5 0h2v2h1v5h-4v-5h1z" fill="#813C32"/>
+  <path d="M2 41h44v2H2z" fill="#F3AE63"/>
+  <path d="M1 43h46v2H1z" fill="#B8462A"/>
+</svg>

@@ -7,7 +7,11 @@ import './motion.css';
 import './hero.css';
 import './pages.css';
 import './storytelling.css';
+import './refinement.css';
+import './discovery.css';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode><BrowserRouter><App /></BrowserRouter></React.StrictMode>,
-);
+const root = document.getElementById('root')!;
+const app = <React.StrictMode><BrowserRouter><App /></BrowserRouter></React.StrictMode>;
+// Production pages contain the same rendered application for visitors and crawlers.
+if (root.dataset.prerendered === 'true') ReactDOM.hydrateRoot(root, app);
+else ReactDOM.createRoot(root).render(app);

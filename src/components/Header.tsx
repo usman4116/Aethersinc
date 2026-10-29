@@ -7,7 +7,7 @@ import { products, services } from '../data/content';
 const menus = [
   { name: 'Products', links: products.map(p => ({ label: p.name, description: p.category, href: `/products/${p.slug}` })), all: '/products', allLabel: 'Explore all products' },
   { name: 'Solutions', links: services.map(s => ({ label: s.title, description: s.fullTitle, href: `/services#${s.slug}` })), all: '/services', allLabel: 'Explore our services' },
-  { name: 'Company', links: [{ label: 'About Aethersync', description: 'Our story and our founders', href: '/about' }, { label: 'Our process', description: 'How we turn ideas into software', href: '/services#process' }, { label: 'Get in touch', description: 'Start a conversation', href: '/contact' }], all: '/about', allLabel: 'Meet Aethersync' },
+  { name: 'Company', links: [{ label: 'About Aethersync', description: 'Our story and our founder', href: '/about' }, { label: 'Our process', description: 'How we turn ideas into software', href: '/services#process' }, { label: 'Get in touch', description: 'Start a conversation', href: '/contact' }], all: '/about', allLabel: 'Meet Aethersync' },
 ];
 
 export function Header() {

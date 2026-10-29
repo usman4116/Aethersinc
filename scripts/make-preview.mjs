@@ -40,7 +40,7 @@ for (const [path, data] of assets) {
   script = script.replaceAll(JSON.stringify(path), JSON.stringify(data));
   css = css.replaceAll("'" + path + "'", "'" + data + "'");
 }
-const html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Aethersync offline preview"><meta name="theme-color" content="#f8f5ec"><title>Aethersync — offline preview</title><style>' + css + '</style></head><body><div id="root"></div><script>' + script.replaceAll('</script', '<\\/script') + '</script></body></html>';
+const html = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Aethersync offline preview"><meta name="theme-color" content="#101114"><title>Aethersync — offline preview</title><style>' + css + '</style></head><body><div id="root"></div><script>' + script.replaceAll('</script', '<\\/script') + '</script></body></html>';
 const destination = resolve(root, 'preview.html');
 writeFileSync(destination, html);
 console.log('Created ' + destination + ' (' + (Buffer.byteLength(html) / 1024 / 1024).toFixed(1) + ' MB).');

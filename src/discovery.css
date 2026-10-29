@@ -1,0 +1,48 @@
+.discovery-services, .discovery-questions, .discovery-delivery, .discovery-fit { padding-block: 90px; }
+.discovery-service-grid, .discovery-outcomes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.discovery-service-grid > a, .discovery-outcomes > article { display: flex; flex-direction: column; padding: 32px; border: 1px solid var(--edge); background: linear-gradient(145deg, rgba(239, 119, 65, .05), transparent 65%); }
+.discovery-service-grid > a:hover { border-color: var(--orange); }
+.discovery-service-grid .mono, .discovery-outcomes .mono { color: var(--orange); font-size: 10px; }
+.discovery-service-grid h3, .discovery-outcomes h2 { margin: 28px 0 16px; font-size: clamp(26px, 2.5vw, 36px); line-height: 1.12; }
+.discovery-service-grid p, .discovery-outcomes p, .discovery-delivery p, .discovery-fit p, .discovery-questions p { color: var(--secondary); font-size: 16px; line-height: 1.8; }
+.discovery-card-link { display: flex; justify-content: space-between; gap: 16px; margin-top: auto; padding-top: 30px; font-size: 14px; }
+.discovery-questions, .discovery-delivery, .discovery-fit { display: grid; grid-template-columns: 1fr 1.25fr; gap: 70px; border-top: 1px solid var(--edge); }
+.discovery-questions h2, .discovery-delivery h2, .discovery-fit h2 { font-size: clamp(36px, 4.4vw, 62px); line-height: 1.08; margin-bottom: 28px; }
+.discovery-questions em, .discovery-intro em, .discovery-delivery em, .discovery-fit em { font-family: Gambetta, serif; font-weight: 400; color: var(--orange); }
+.discovery-questions details { border-bottom: 1px solid var(--edge); }
+.discovery-questions summary { display: flex; justify-content: space-between; gap: 24px; padding: 23px 0; cursor: pointer; font-size: 19px; list-style: none; }
+.discovery-questions summary::-webkit-details-marker { display: none; }
+.discovery-questions summary svg { flex-shrink: 0; margin-top: 5px; color: var(--orange); }
+.discovery-questions details[open] summary svg { transform: rotate(45deg); }
+.discovery-questions details p { padding-bottom: 25px; }
+.discovery-intro { position: relative; padding-block: 35px 85px; }
+.discovery-breadcrumb { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 70px; color: var(--secondary); font-size: 10px; }
+.discovery-breadcrumb a:hover { color: var(--orange); }
+.discovery-intro h1 { position: relative; font-size: clamp(44px, 6.5vw, 94px); line-height: 1.04; letter-spacing: -.04em; margin: 25px 0 40px; }
+.discovery-intro-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; }
+.discovery-intro p { font-size: 18px; color: var(--secondary); max-width: 650px; line-height: 1.75; }
+.discovery-intro .design-button { flex-shrink: 0; }
+.discovery-outcomes { padding-bottom: 90px; }
+.discovery-delivery p + p { margin-top: 20px; }
+.discovery-delivery .design-inline-link { margin-top: 25px; }
+.discovery-proof { padding-block: 50px; border-top: 1px solid var(--edge); }
+.discovery-proof > p { max-width: 850px; font-size: clamp(24px, 3.5vw, 42px); line-height: 1.35; margin: 25px 0; }
+.discovery-related { display: flex; justify-content: space-between; gap: 30px; padding-bottom: 55px; }
+.discovery-related a { display: inline-flex; align-items: center; gap: 22px; }
+.discovery-related a:hover { color: var(--orange); }
+.founder-profile-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 70px; align-items: center; }
+.founder-profile-grid h1 { font-size: clamp(44px, 5.2vw, 76px); }
+.founder-profile-grid p { margin: 20px 0; }
+.founder-profile-grid figure img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; }
+.founder-profile-grid figcaption { padding-top: 16px; color: var(--secondary); font-size: 10px; }
+.founder-profile-grid .design-button { margin-top: 15px; }
+@media (max-width: 900px) {
+  .discovery-service-grid, .discovery-outcomes { grid-template-columns: 1fr; }
+  .discovery-questions, .discovery-delivery, .discovery-fit, .founder-profile-grid { grid-template-columns: 1fr; gap: 35px; }
+  .discovery-intro-bottom { flex-direction: column; align-items: flex-start; }
+  .discovery-related { flex-direction: column; }
+  .discovery-services, .discovery-questions, .discovery-delivery, .discovery-fit { padding-block: 60px; }
+  .discovery-breadcrumb { margin-bottom: 45px; }
+  .discovery-intro { padding-bottom: 60px; }
+  .founder-profile-grid figure { max-width: 450px; }
+}
