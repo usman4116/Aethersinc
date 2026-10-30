@@ -37,7 +37,7 @@ On another machine, run `npm ci` before these commands. Production builds preren
 
 ## Search and AI discovery
 
-The production domain is `https://aethersync.tech`. Every public page has its own title, description, canonical URL and connected structured data. Dedicated website development, custom software and ERP pages and a Usman Farhan founder profile are linked throughout the site. Run `npm run test:seo` after a production build. See [SEO.md](SEO.md) for domain setup, Search Console verification, sitemap submission and discovery limits.
+The production domain is `https://www.aethersync.tech`. Every public page has its own title, description, canonical URL and connected structured data. Dedicated website development, custom software and ERP pages and a Usman Farhan founder profile are linked throughout the site. Run `npm run test:seo` after a production build. See [SEO.md](SEO.md) for domain setup, Search Console verification, sitemap submission and discovery limits.
 
 ## Contact behaviour
 

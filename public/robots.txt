@@ -3,4 +3,4 @@ Allow: /
 
 # Public pages and assets are available to search and answer-engine crawlers.
 # CDN/firewall settings must also allow legitimate crawlers to fetch these URLs.
-Sitemap: https://aethersync.tech/sitemap.xml
+Sitemap: https://www.aethersync.tech/sitemap.xml

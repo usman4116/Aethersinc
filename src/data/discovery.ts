@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://aethersync.tech';
+export const SITE_URL = 'https://www.aethersync.tech';
 export const COMPANY_NAME = 'Aethersync Technology Solutions';
 export const FOUNDER_PATH = '/about/usman-farhan';
 

@@ -11,7 +11,8 @@
     "preview:offline": "node scripts/make-preview.mjs",
     "test:motion": "node scripts/check-motion.mjs",
     "test:pages": "node scripts/check-pages.mjs",
-    "test:seo": "node scripts/check-seo.mjs"
+    "test:seo": "node scripts/check-seo.mjs",
+    "test:live": "node scripts/check-live.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",

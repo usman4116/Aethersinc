@@ -2,8 +2,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false,
-  "redirects": [
-    { "source": "/:path*", "has": [{ "type": "host", "value": "www.aethersync.tech" }], "destination": "https://aethersync.tech/:path*", "permanent": true }
-  ]
+  "trailingSlash": false
 }

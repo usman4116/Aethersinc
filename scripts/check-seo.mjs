@@ -14,10 +14,11 @@ const sourceMap = await readFile('public/sitemap.xml', 'utf8');
 assert.deepEqual(new Set([...sourceMap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1])), new Set([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(m => m[1])), 'Development and production sitemap agree');
 const robots = await readFile(resolve(dist, 'robots.txt'), 'utf8');
 assert.match(robots, /User-agent: \*\s+Allow: \//);
-assert.match(robots, /Sitemap: https:\/\/aethersync.tech\/sitemap.xml/);
+assert.match(robots, /Sitemap: https:\/\/www.aethersync.tech\/sitemap.xml/);
 const config = JSON.parse(await readFile('vercel.json', 'utf8'));
 assert.equal(config.cleanUrls, true);
 assert.ok(!config.rewrites, 'Unknown routes must not rewrite to the homepage');
+assert.ok(!config.redirects?.some(rule => rule.destination?.startsWith('https://aethersync.tech')), 'Do not oppose the hosting-level apex-to-www redirect');
 
 // Local static host matching the clean-URL production layout, with real 404s.
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml', '.xml': 'application/xml', '.txt': 'text/plain', '.png': 'image/png', '.jpg': 'image/jpeg', '.gif': 'image/gif', '.woff2': 'font/woff2', '.ttf': 'font/ttf', '.mp4': 'video/mp4' };
@@ -45,8 +46,8 @@ try {
     assert.equal(await page.locator('h1').count(), 1, `${path} has one primary heading without JS`);
     assert.ok(await page.locator('h1').isVisible(), `${path} heading is visible without JS`);
     assert.ok((await page.locator('main').innerText()).length > 250, `${path} includes real content without JS`);
-    assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), `https://aethersync.tech${path}`);
-    assert.equal(await page.locator('meta[property="og:url"]').getAttribute('content'), `https://aethersync.tech${path}`);
+    assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), `https://www.aethersync.tech${path}`);
+    assert.equal(await page.locator('meta[property="og:url"]').getAttribute('content'), `https://www.aethersync.tech${path}`);
     assert.match(await page.locator('meta[name="robots"]').getAttribute('content'), /^index,/);
     const title = await page.title();
     assert.ok(!titles.has(title), `${path} has a unique title`); titles.add(title);
@@ -74,14 +75,14 @@ try {
     await live.goto(base + path);
     await live.waitForTimeout(150);
     assert.equal(await live.locator('#site-schema').count(), 1, `${path} one schema after hydration`);
-    assert.equal(await live.locator('link[rel="canonical"]').getAttribute('href'), `https://aethersync.tech${path}`);
+    assert.equal(await live.locator('link[rel="canonical"]').getAttribute('href'), `https://www.aethersync.tech${path}`);
   }
   await live.goto(base + '/services/website-development');
   await live.locator('.discovery-questions summary').first().click();
   assert.equal(await live.locator('.discovery-questions details[open]').count(), 1, 'FAQs work after hydration');
   await live.locator('.discovery-breadcrumb').getByRole('link', { name: 'Services', exact: true }).click();
   await live.waitForURL('**/services');
-  await live.waitForFunction(() => document.querySelector('link[rel="canonical"]').href === 'https://aethersync.tech/services');
+  await live.waitForFunction(() => document.querySelector('link[rel="canonical"]').href === 'https://www.aethersync.tech/services');
   assert.match(await live.title(), /ERP Services/);
   const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
   const small = await mobile.newPage();
