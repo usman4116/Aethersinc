@@ -1,4 +1,5 @@
 export const SITE_URL = 'https://www.aethersync.tech';
+export const PRODUCTS_SITE_URL = 'https://www.theaethersync.com';
 export const COMPANY_NAME = 'Aethersync Technology Solutions';
 export const FOUNDER_PATH = '/about/usman-farhan';
 
@@ -63,7 +64,8 @@ export const servicePages = [
 ] as const;
 
 export const companyAnswers = [
-  ['What does Aethersync do?', 'Aethersync Technology Solutions builds websites, custom software, ERP systems and AI applications. Its services also include cloud infrastructure, API integration and business automation.'],
+  ['What does Aethersync do?', 'Aethersync.tech is the development services website of Aethersync Technology Solutions. We design websites, build custom software, implement ERP systems and integrate business tools. Our software products are presented separately at theaethersync.com.'],
+  ['What is the difference between the two Aethersync websites?', 'Theaethersync.com presents our SaaS products, AI platforms and ERP software. Aethersync.tech explains our website development, custom software, ERP implementation and integration services. Both belong to Aethersync Technology Solutions.'],
   ['Who is Usman Farhan?', 'Muhammad Usman Farhan, also known as Usman Farhan, is the CEO and founder of Aethersync Technology Solutions. His work focuses on enterprise ERP, custom software and AI-driven business automation.'],
   ['How can I work with Aethersync?', 'Use our contact page to share your project, existing systems and goals. We begin with discovery to define requirements and agree a delivery scope.'],
 ] as const;

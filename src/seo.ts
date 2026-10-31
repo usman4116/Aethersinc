@@ -1,10 +1,10 @@
 import { EMAIL, founders, products, services } from './data/content';
 import { clientProjects } from './data/projects';
-import { COMPANY_NAME, FOUNDER_PATH, SITE_URL, servicePages } from './data/discovery';
+import { COMPANY_NAME, FOUNDER_PATH, SITE_URL, PRODUCTS_SITE_URL, servicePages } from './data/discovery';
 
 const pages: Record<string, { title: string; description: string; label: string }> = {
-  '/': { title: 'Aethersync | Website, Software & ERP Development', description: 'Aethersync Technology Solutions builds websites, custom software, ERP systems and AI applications. Led by CEO and founder Usman Farhan.', label: 'Home' },
-  '/products': { title: 'AI & Business Software Products | Aethersync', description: 'Explore Aethersync’s software platforms for AI, ERP, operations and finance, including Open ERP, Corpflow, Finraze and FuturePath AI.', label: 'Products' },
+  '/': { title: 'Aethersync | Website, Software & ERP Development', description: 'Website development, custom software and ERP implementation by Aethersync Technology Solutions. Explore our services and discuss your project with our team.', label: 'Home' },
+  '/products': { title: 'Platform Integration & Implementation | Aethersync', description: 'Plan implementation, workflow customization and integration around Aethersync platforms. Explore our product experience and discuss your business requirements.', label: 'Products' },
   '/services': { title: 'Website, Custom Software & ERP Services | Aethersync', description: 'Explore Aethersync’s website development, custom software, ERP customization, AI, cloud infrastructure and business automation services.', label: 'Services' },
   '/projects': { title: 'Website Development Portfolio | Aethersync', description: 'See Aethersync’s client website work across beauty, retail and lifestyle brands. Explore distinctive web design and development projects.', label: 'Our work' },
   '/about': { title: 'About Aethersync Technology Solutions | Our Company', description: 'Meet Aethersync Technology Solutions, established in 2023 and led by CEO and founder Muhammad Usman Farhan. Discover our software, ERP and AI work.', label: 'Company' },
@@ -20,12 +20,12 @@ export function getSeo(path: string) {
   const product = products.find(p => `/products/${p.slug}` === pathname);
   const service = servicePages.find(s => `/services/${s.slug}` === pathname);
   const known = publicPaths.includes(pathname);
-  const meta = product ? { title: `${product.name} — ${product.category} | Aethersync`, description: product.description, label: product.name } : service ? { title: `${service.title} | Aethersync`, description: service.description, label: service.title } : pages[pathname] ?? { title: 'Page Not Found | Aethersync', description: 'This page could not be found. Explore Aethersync’s products, services and company.', label: 'Page not found' };
+  const meta = product ? { title: `${product.name} — Project Planning & Integration | Aethersync`, description: `Explore ${product.name} from an implementation perspective: workflows, data and integration requirements. Discuss your project with Aethersync.`, label: product.name } : service ? { title: `${service.title} | Aethersync`, description: service.description, label: service.title } : pages[pathname] ?? { title: 'Page Not Found | Aethersync', description: 'This page could not be found. Explore Aethersync’s products, services and company.', label: 'Page not found' };
   const canonical = `${SITE_URL}${pathname === '/' ? '/' : pathname}`;
   const orgId = `${SITE_URL}/#organization`;
   const personId = `${SITE_URL}${FOUNDER_PATH}#person`;
   const ref = (id: string) => ({ '@id': id });
-  const organization = { '@type': 'Organization', '@id': orgId, name: COMPANY_NAME, alternateName: 'Aethersync', url: `${SITE_URL}/`, foundingDate: '2023', email: EMAIL, logo: `${SITE_URL}/favicon.svg`, description: pages['/'].description, founder: ref(personId) };
+  const organization = { '@type': 'Organization', '@id': orgId, name: COMPANY_NAME, alternateName: 'Aethersync', sameAs: [PRODUCTS_SITE_URL], url: `${SITE_URL}/`, foundingDate: '2023', email: EMAIL, logo: `${SITE_URL}/favicon.svg`, description: pages['/'].description, founder: ref(personId) };
   const person = { '@type': 'Person', '@id': personId, name: founders[0].name, alternateName: 'Usman Farhan', jobTitle: 'CEO & Founder', url: `${SITE_URL}${FOUNDER_PATH}`, image: `${SITE_URL}/founder.jpg`, description: pages[FOUNDER_PATH].description, worksFor: ref(orgId) };
   const crumbs = [{ name: 'Home', item: `${SITE_URL}/` }];
   if (pathname.startsWith('/products/')) crumbs.push({ name: 'Products', item: `${SITE_URL}/products` });
@@ -33,13 +33,13 @@ export function getSeo(path: string) {
   if (pathname === FOUNDER_PATH) crumbs.push({ name: 'Company', item: `${SITE_URL}/about` });
   if (pathname !== '/') crumbs.push({ name: meta.label, item: canonical });
   const serviceSchema = (s: typeof services[number]) => ({ '@type': 'Service', '@id': `${SITE_URL}/services#${s.slug}`, name: s.fullTitle, description: s.description, provider: ref(orgId), url: `${SITE_URL}/services#${s.slug}` });
-  const softwareSchema = (p: typeof products[number]) => ({ '@type': 'SoftwareApplication', '@id': `${SITE_URL}/products/${p.slug}#software`, name: p.name, description: p.description, applicationCategory: 'BusinessApplication', applicationSubCategory: p.category, operatingSystem: 'Web', url: `${SITE_URL}/products/${p.slug}`, publisher: ref(orgId), creativeWorkStatus: p.status });
-  const mainEntity = product ? softwareSchema(product) : service ? { '@type': 'Service', '@id': `${canonical}#service`, name: service.title, description: service.description, serviceType: service.title, provider: ref(orgId), url: canonical } : pathname === FOUNDER_PATH ? ref(personId) : pathname === '/about' || pathname === '/' ? ref(orgId) : undefined;
+  const platformProjectSchema = (p: typeof products[number]) => ({ '@type': 'Service', '@id': `${SITE_URL}/products/${p.slug}#implementation`, name: `${p.name} project planning and integration`, description: `Review workflows, data and integration requirements for a project involving ${p.name}. Platform availability and scope are confirmed during discovery.`, url: `${SITE_URL}/products/${p.slug}`, provider: ref(orgId) });
+  const mainEntity = product ? platformProjectSchema(product) : service ? { '@type': 'Service', '@id': `${canonical}#service`, name: service.title, description: service.description, serviceType: service.title, provider: ref(orgId), url: canonical } : pathname === FOUNDER_PATH ? ref(personId) : pathname === '/about' || pathname === '/' ? ref(orgId) : undefined;
   const pageType = pathname === FOUNDER_PATH ? 'ProfilePage' : pathname === '/about' ? 'AboutPage' : pathname === '/contact' ? 'ContactPage' : ['/products', '/services', '/projects'].includes(pathname) ? 'CollectionPage' : 'WebPage';
   const graph: object[] = [organization, person, { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, name: 'Aethersync', alternateName: COMPANY_NAME, url: `${SITE_URL}/`, publisher: ref(orgId), inLanguage: 'en' }, {
     '@type': pageType, '@id': `${canonical}#webpage`, url: canonical, name: meta.title, description: meta.description, inLanguage: 'en', isPartOf: ref(`${SITE_URL}/#website`), publisher: ref(orgId), ...(mainEntity ? { mainEntity } : {}),
     ...(pathname !== '/' ? { breadcrumb: ref(`${canonical}#breadcrumb`) } : {}),
-    ...(pathname === '/products' ? { hasPart: products.map(softwareSchema) } : {}),
+    ...(pathname === '/products' ? { hasPart: products.map(platformProjectSchema) } : {}),
     ...(pathname === '/services' ? { hasPart: services.map(serviceSchema) } : {}),
     ...(pathname === '/projects' ? { hasPart: clientProjects.map(p => ({ '@type': 'CreativeWork', name: p.name, description: p.description, url: p.url, creator: ref(orgId) })) } : {}),
   }];
