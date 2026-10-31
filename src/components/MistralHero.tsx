@@ -86,9 +86,9 @@ export function MistralHero() {
   return <>
     <section className="mistral-hero" ref={ref} aria-labelledby="home-title">
       <div className="hero-center"><div className="hero-title-parallax">
-        <h1 id="home-title" className="hero-headline" aria-label="Custom software. Built around you.">
-          <span className="hero-headline-line" aria-hidden="true"><RollingWord text="Custom" /><picture className="hero-inline-flag"><source media="(prefers-reduced-motion: reduce)" srcSet="/hero/flag.png" /><img src="/hero/flag.gif" alt="" width="120" height="120" /></picture><RollingWord text="software." /></span>
-          <span className="hero-headline-line" aria-hidden="true"><RollingWord text="Built" />{' '}<RollingWord text="around" />{' '}<RollingWord text="you." /></span>
+        <h1 id="home-title" className="hero-headline" aria-label="Intelligent software. In your hands.">
+          <span className="hero-headline-line" aria-hidden="true"><RollingWord text="Intelligent" /><picture className="hero-inline-flag"><source media="(prefers-reduced-motion: reduce)" srcSet="/hero/flag.png" /><img src="/hero/flag.gif" alt="" width="120" height="120" /></picture><RollingWord text="software." /></span>
+          <span className="hero-headline-line" aria-hidden="true"><RollingWord text="In" />{' '}<RollingWord text="your" />{' '}<RollingWord text="hands." /></span>
         </h1>
       </div><Link to="/services" className="hero-announcement"><span className="hero-announcement-icon"><PixelA /></span><span>Explore our services</span><ChevronRight size={17} aria-hidden="true" /></Link></div>
       <HeroVisual />
