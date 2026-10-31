@@ -38,5 +38,5 @@ export function PageHero({ eyebrow, title, description, children }: { eyebrow: s
 }
 
 export function ContactCta() {
-  return <section className="contact-cta"><div className="container cta-inner"><div><Eyebrow>Built together. Built to last.</Eyebrow><h2>Your next big idea.<br /><span>Let’s make it real.</span></h2></div><Button to="/contact" variant="dark">Talk to our team</Button><PixelA className="cta-mark" monochrome /></div></section>;
+  return <section className="contact-cta"><div className="container cta-inner"><div><Eyebrow>Start a project</Eyebrow><h2>Tell us what you need.<br /><span>We’ll plan the next step.</span></h2></div><Button to="/contact" variant="dark">Talk to our team</Button><PixelA className="cta-mark" monochrome /></div></section>;
 }

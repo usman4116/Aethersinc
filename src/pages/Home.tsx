@@ -1,8 +1,6 @@
 import { Questions, ServiceLinks } from '../components/DiscoveryContent';
-import { ServiceFlow } from '../components/ServiceFlow';
 import { useState } from 'react';
 import { Minus, Plus } from 'lucide-react';
-import { PixelA } from '../components/Brand';
 import { MistralHero } from '../components/MistralHero';
 import { ContactCta, Eyebrow, Reveal, TextLink } from '../components/UI';
 import { Process } from '../components/Process';
@@ -16,12 +14,11 @@ export default function Home() {
   return <>
     <MistralHero />
     <ServiceLinks />
-    <div className="chapter-bridge container"><span className="mono">01 / THE POSSIBILITIES</span><p>Start with what your business could become.</p><span aria-hidden="true">↓</span></div><ProductStory />
-    <section className="statement-section"><div className="container"><Eyebrow>Your business is one of a kind</Eyebrow><Reveal><h2><span className="scroll-word">Your</span> <span className="scroll-word">software</span><br /><span className="scroll-word">should</span> <span className="scroll-word">be,</span> <span className="scroll-word statement-accent">too.</span></h2></Reveal><div className="statement-bottom"><PixelA monochrome /><p>Aethersync Technology Solutions builds websites, custom software, ERP systems and AI applications around your processes, your goals, and the way you want to grow.</p><TextLink to="/about">Discover our approach</TextLink></div></div></section>
-    <section className="section services-section"><div className="container services-split"><Reveal className="services-intro"><Eyebrow>Made for your next move</Eyebrow><h2>From ambition<br />to <span className="text-orange">action.</span></h2><p>One team. Six disciplines. The expertise to take your next idea from a conversation to working software.</p><TextLink to="/services">Explore our solutions</TextLink><ServiceFlow active={activeService ?? 0} /></Reveal><div className="service-accordion">{services.map((service, index) => <div key={service.slug} className={`accordion-item ${activeService === index ? 'accordion-open' : ''}`}><h3><button type="button" aria-expanded={activeService === index} aria-controls={`service-panel-${index}`} onClick={() => setActiveService(activeService === index ? null : index)}><span className="mono accordion-number">0{index + 1}</span><span>{service.title}</span>{activeService === index ? <Minus size={20} /> : <Plus size={20} />}</button></h3><div id={`service-panel-${index}`} hidden={activeService !== index} className="accordion-content"><p>{service.description}</p><TextLink to={`/services#${service.slug}`}>See what we can build</TextLink></div></div>)}</div></div></section>
-    <div className="chapter-bridge container"><span className="mono">02 / THE PROOF</span><p>Ideas become experiences people can use.</p><span aria-hidden="true">↓</span></div><HorizontalWork />
+    <ProductStory />
+    <section className="section services-section"><div className="container services-split"><Reveal className="services-intro"><Eyebrow>Our capabilities</Eyebrow><h2>The expertise behind<br />your next release.</h2><p>Development, integration and ongoing support from one team. Choose the capabilities your project needs.</p><TextLink to="/services">Explore our solutions</TextLink></Reveal><div className="service-accordion">{services.map((service, index) => <div key={service.slug} className={`accordion-item ${activeService === index ? 'accordion-open' : ''}`}><h3><button type="button" aria-expanded={activeService === index} aria-controls={`service-panel-${index}`} onClick={() => setActiveService(activeService === index ? null : index)}><span className="mono accordion-number">0{index + 1}</span><span>{service.title}</span>{activeService === index ? <Minus size={20} /> : <Plus size={20} />}</button></h3><div id={`service-panel-${index}`} hidden={activeService !== index} className="accordion-content"><p>{service.description}</p><TextLink to={`/services#${service.slug}`}>See what we can build</TextLink></div></div>)}</div></div></section>
+    <HorizontalWork />
     <IdeFeature />
-    <div className="chapter-bridge container"><span className="mono">03 / THE PARTNERSHIP</span><p>Here’s how we get there, together.</p><span aria-hidden="true">↓</span></div><Process />
+    <Process />
     <section className="tech-section"><div className="container"><span className="mono">A modern foundation</span><div className="tech-marquee"><div className="tech-list">{technologies.map(tech => <span key={tech}>{tech}</span>)}{technologies.map(tech => <span key={"copy-" + tech} aria-hidden="true">{tech}</span>)}</div></div></div></section>
     <Questions /><ContactCta />
   </>;
